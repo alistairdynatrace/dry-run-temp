@@ -13,7 +13,7 @@
 1. Click on "Add trigger"
 1. For "Data source", select "Request - Path"
 1. For "Operator", select "equals"
-1. For "Value", copy and paste "/v1/trade/buy"
+1. For "Value", copy and paste "/broker-service/v1/trade/buy"
 
 #### Configure metadata
 1. For "Event provider data source", select "Fixed value"
