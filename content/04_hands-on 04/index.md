@@ -18,9 +18,9 @@
 1. Select "Execute DQL Query" from the right-hand menu and enter in the query in the "DQL query" box that appears.
     ```
     fetch bizevents, from:now()-1h
-    | filter Type == "CARD_ERROR"
-    | parse Details, "JSON:errors"
-    | fields `Order ID`, {errors[errorCode], alias:`Error code`}, {errors[errorType], alias:`Error type`}, {errors[errorMessage], alias:`Error message`}
+    | filter type == "CARD_ERROR"
+    | parse details, "JSON:errors"
+    | fields orderId, {errors[errorCode], alias:`Error code`}, {errors[errorType], alias:`Error type`}, {errors[errorMessage], alias:`Error message`}
     ```
 
 #### Adding a Code step to format the results
@@ -56,7 +56,7 @@
 1. Choose "business-analytics-automation" as the channel (it should be the only option).
 1. In the "Message" field, enter the below.
     ```
-    {{ result('<name of previuous step>') }}
+    {{ result('<name of previuous step>.niceOutput') }}
     ```
 1. Make sure to replace "\<name of previous step\>" with the name of the Code step - which by default is "run_javascript_1".
 
